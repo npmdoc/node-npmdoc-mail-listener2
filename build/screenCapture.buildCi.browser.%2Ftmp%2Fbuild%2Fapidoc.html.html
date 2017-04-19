@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.mail-listener2.mail-listener2">
+            function <span class="apidocSignatureSpan"></span>mail-listener2
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.mail-listener2.super_">
             function <span class="apidocSignatureSpan">mail-listener2.</span>super_
             <span class="apidocSignatureSpan">()</span>
@@ -69,6 +78,51 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.mail-listener2" id="apidoc.module.mail-listener2">module mail-listener2</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mail-listener2.mail-listener2" id="apidoc.element.mail-listener2.mail-listener2">
+        function <span class="apidocSignatureSpan"></span>mail-listener2
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailListener(options) {
+  this.markSeen = !! options.markSeen;
+  this.mailbox = options.mailbox || "INBOX";
+  if ('string' === typeof options.searchFilter) {
+    this.searchFilter = [options.searchFilter];
+  } else {
+    this.searchFilter = options.searchFilter || ["UNSEEN"];
+  }
+  this.fetchUnreadOnStart = !! options.fetchUnreadOnStart;
+  this.mailParserOptions = options.mailParserOptions || {};
+  if (options.attachments &amp;&amp; options.attachmentOptions &amp;&amp; options.attachmentOptions.stream) {
+    this.mailParserOptions.streamAttachments = true;
+  }
+  this.attachmentOptions = options.attachmentOptions || {};
+  this.attachments = options.attachments || false;
+  this.attachmentOptions.directory = (this.attachmentOptions.directory ? this.attachmentOptions.directory : '');
+  this.imap = new Imap({
+    xoauth2: options.xoauth2,
+    user: options.username,
+    password: options.password,
+    host: options.host,
+    port: options.port,
+    tls: options.tls,
+    tlsOptions: options.tlsOptions || {},
+    connTimeout: options.connTimeout || null,
+    authTimeout: options.authTimeout || null,
+    debug: options.debug || null
+  });
+
+  this.imap.once('ready', imapReady.bind(this));
+  this.imap.once('close', imapClose.bind(this));
+  this.imap.on('error', imapError.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
