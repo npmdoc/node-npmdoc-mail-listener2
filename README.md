@@ -1,9 +1,14 @@
-# api documentation for  [mail-listener2 (v0.3.1)](https://github.com/chirag04/mail-listener2)  [![npm package](https://img.shields.io/npm/v/npmdoc-mail-listener2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mail-listener2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mail-listener2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mail-listener2)
+# npmdoc-mail-listener2
+
+#### api documentation for  [mail-listener2 (v0.3.1)](https://github.com/chirag04/mail-listener2)  [![npm package](https://img.shields.io/npm/v/npmdoc-mail-listener2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mail-listener2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mail-listener2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mail-listener2)
+
 #### Mail listener library for node.js. Get notification when new email arrived.
 
-[![NPM](https://nodei.co/npm/mail-listener2.png?downloads=true)](https://www.npmjs.com/package/mail-listener2)
+[![NPM](https://nodei.co/npm/mail-listener2.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mail-listener2)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-mail-listener2/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-mail-listener2_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-mail-listener2/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-mail-listener2/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-mail-listener2/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-mail-listener2/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-mail-listener2/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-mail-listener2/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Chirag Jain",
-        "email": "jain_chirag04@yahoo.com",
         "url": "http://chiragjain.tumblr.com"
     },
     "bugs": {
@@ -49,13 +53,11 @@
     "license": "MIT",
     "maintainers": [
         {
-            "name": "chirag04",
-            "email": "jain_chirag04@yahoo.com"
+            "name": "chirag04"
         }
     ],
     "name": "mail-listener2",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/chirag04/mail-listener2.git"
@@ -63,29 +65,6 @@
     "scripts": {},
     "version": "0.3.1"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module mail-listener2](#apidoc.module.mail-listener2)
-1.  [function <span class="apidocSignatureSpan">mail-listener2.</span>super_ ()](#apidoc.element.mail-listener2.super_)
-
-
-
-# <a name="apidoc.module.mail-listener2"></a>[module mail-listener2](#apidoc.module.mail-listener2)
-
-#### <a name="apidoc.element.mail-listener2.super_"></a>[function <span class="apidocSignatureSpan">mail-listener2.</span>super_ ()](#apidoc.element.mail-listener2.super_)
-- description and source-code
-```javascript
-function EventEmitter() {
-  EventEmitter.init.call(this);
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
