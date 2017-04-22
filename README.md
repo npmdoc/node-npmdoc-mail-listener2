@@ -63,7 +63,8 @@
         "url": "git://github.com/chirag04/mail-listener2.git"
     },
     "scripts": {},
-    "version": "0.3.1"
+    "version": "0.3.1",
+    "bin": {}
 }
 ```
 
