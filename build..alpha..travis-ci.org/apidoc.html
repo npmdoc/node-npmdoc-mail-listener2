@@ -72,8 +72,67 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.mail-listener2.index">
+            function <span class="apidocSignatureSpan">mail-listener2.</span>index
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.mail-listener2.super_">
             function <span class="apidocSignatureSpan">mail-listener2.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mail-listener2.</span>index.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mail-listener2.index">module mail-listener2.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mail-listener2.index.index">
+            function <span class="apidocSignatureSpan">mail-listener2.</span>index
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mail-listener2.index.super_">
+            function <span class="apidocSignatureSpan">mail-listener2.index.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mail-listener2.index.prototype">module mail-listener2.index.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mail-listener2.index.prototype.start">
+            function <span class="apidocSignatureSpan">mail-listener2.index.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mail-listener2.index.prototype.stop">
+            function <span class="apidocSignatureSpan">mail-listener2.index.prototype.</span>stop
             <span class="apidocSignatureSpan">()</span>
             </a>
 
@@ -133,6 +192,51 @@
 
 
     <h2>
+        <a href="#apidoc.element.mail-listener2.index" id="apidoc.element.mail-listener2.index">
+        function <span class="apidocSignatureSpan">mail-listener2.</span>index
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailListener(options) {
+  this.markSeen = !! options.markSeen;
+  this.mailbox = options.mailbox || &#x22;INBOX&#x22;;
+  if (&#x27;string&#x27; === typeof options.searchFilter) {
+    this.searchFilter = [options.searchFilter];
+  } else {
+    this.searchFilter = options.searchFilter || [&#x22;UNSEEN&#x22;];
+  }
+  this.fetchUnreadOnStart = !! options.fetchUnreadOnStart;
+  this.mailParserOptions = options.mailParserOptions || {};
+  if (options.attachments &#x26;&#x26; options.attachmentOptions &#x26;&#x26; options.attachmentOptions.stream) {
+    this.mailParserOptions.streamAttachments = true;
+  }
+  this.attachmentOptions = options.attachmentOptions || {};
+  this.attachments = options.attachments || false;
+  this.attachmentOptions.directory = (this.attachmentOptions.directory ? this.attachmentOptions.directory : &#x27;&#x27;);
+  this.imap = new Imap({
+    xoauth2: options.xoauth2,
+    user: options.username,
+    password: options.password,
+    host: options.host,
+    port: options.port,
+    tls: options.tls,
+    tlsOptions: options.tlsOptions || {},
+    connTimeout: options.connTimeout || null,
+    authTimeout: options.authTimeout || null,
+    debug: options.debug || null
+  });
+
+  this.imap.once(&#x27;ready&#x27;, imapReady.bind(this));
+  this.imap.once(&#x27;close&#x27;, imapClose.bind(this));
+  this.imap.on(&#x27;error&#x27;, imapError.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.mail-listener2.super_" id="apidoc.element.mail-listener2.super_">
         function <span class="apidocSignatureSpan">mail-listener2.</span>super_
         <span class="apidocSignatureSpan">()</span>
@@ -143,6 +247,140 @@
   EventEmitter.init.call(this);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mail-listener2.index" id="apidoc.module.mail-listener2.index">module mail-listener2.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mail-listener2.index.index" id="apidoc.element.mail-listener2.index.index">
+        function <span class="apidocSignatureSpan">mail-listener2.</span>index
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailListener(options) {
+  this.markSeen = !! options.markSeen;
+  this.mailbox = options.mailbox || &#x22;INBOX&#x22;;
+  if (&#x27;string&#x27; === typeof options.searchFilter) {
+    this.searchFilter = [options.searchFilter];
+  } else {
+    this.searchFilter = options.searchFilter || [&#x22;UNSEEN&#x22;];
+  }
+  this.fetchUnreadOnStart = !! options.fetchUnreadOnStart;
+  this.mailParserOptions = options.mailParserOptions || {};
+  if (options.attachments &#x26;&#x26; options.attachmentOptions &#x26;&#x26; options.attachmentOptions.stream) {
+    this.mailParserOptions.streamAttachments = true;
+  }
+  this.attachmentOptions = options.attachmentOptions || {};
+  this.attachments = options.attachments || false;
+  this.attachmentOptions.directory = (this.attachmentOptions.directory ? this.attachmentOptions.directory : &#x27;&#x27;);
+  this.imap = new Imap({
+    xoauth2: options.xoauth2,
+    user: options.username,
+    password: options.password,
+    host: options.host,
+    port: options.port,
+    tls: options.tls,
+    tlsOptions: options.tlsOptions || {},
+    connTimeout: options.connTimeout || null,
+    authTimeout: options.authTimeout || null,
+    debug: options.debug || null
+  });
+
+  this.imap.once(&#x27;ready&#x27;, imapReady.bind(this));
+  this.imap.once(&#x27;close&#x27;, imapClose.bind(this));
+  this.imap.on(&#x27;error&#x27;, imapError.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mail-listener2.index.super_" id="apidoc.element.mail-listener2.index.super_">
+        function <span class="apidocSignatureSpan">mail-listener2.index.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mail-listener2.index.prototype" id="apidoc.module.mail-listener2.index.prototype">module mail-listener2.index.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mail-listener2.index.prototype.start" id="apidoc.element.mail-listener2.index.prototype.start">
+        function <span class="apidocSignatureSpan">mail-listener2.index.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+  this.imap.connect();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  markSeen: true, // all fetched email willbe marked as seen and not fetched next time
+  fetchUnreadOnStart: true, // use it only if you want to get all unread email on lib start. Default is `false`,
+  mailParserOptions: {streamAttachments: true}, // options to be passed to mailParser lib.
+  attachments: true, // download attachments as they are encountered to the project directory
+  attachmentOptions: { directory: &#x22;attachments/&#x22; } // specify a download directory for attachments
+});
+
+mailListener.<span class="apidocCodeKeywordSpan">start</span>(); // start listening
+
+// stop listening
+//mailListener.stop();
+
+mailListener.on(&#x22;server:connected&#x22;, function(){
+  console.log(&#x22;imapConnected&#x22;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mail-listener2.index.prototype.stop" id="apidoc.element.mail-listener2.index.prototype.stop">
+        function <span class="apidocSignatureSpan">mail-listener2.index.prototype.</span>stop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function () {
+  this.imap.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+attachments: true, // download attachments as they are encountered to the project directory
+attachmentOptions: { directory: &#x22;attachments/&#x22; } // specify a download directory for attachments
+});
+
+mailListener.start(); // start listening
+
+// stop listening
+//mailListener.<span class="apidocCodeKeywordSpan">stop</span>();
+
+mailListener.on(&#x22;server:connected&#x22;, function(){
+console.log(&#x22;imapConnected&#x22;);
+});
+
+mailListener.on(&#x22;server:disconnected&#x22;, function(){
+console.log(&#x22;imapDisconnected&#x22;);
+...</pre></li>
     </ul>
 
 
